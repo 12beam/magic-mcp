@@ -32,10 +32,7 @@ export default class extends WorkerEntrypoint {
 
         process.env.TWENTY_FIRST_API_KEY = headers.get("x-21stdev-magic-api-key");
 
-        if (!Object.keys(missing).length) {
-            return {};
-        }
-        return { "required": JSON.stringify(missing) }
+        return missing
     }
 
     // send message to the server
